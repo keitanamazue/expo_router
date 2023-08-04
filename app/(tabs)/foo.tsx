@@ -1,12 +1,21 @@
-import { StyleSheet } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import { Link, Stack } from 'expo-router';
 
-export default function TabOneScreen() {
+export default function Foo() {
+  
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Foo</Text>
+      <Link
+        href={{
+          pathname: "/foo",
+          params: { id: 'bacon' }
+        }}>
+          View user
+        </Link>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
     </View>
